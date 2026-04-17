@@ -23,8 +23,23 @@ A planet sits on a deformable grid (representing the spacetime fabric) and warps
 
 ## Stack
 
-`C++` · `OpenGL` · `GLEW` · `GLFW`
+`C++` · `OpenGL` · `GLEW` · `GLFW` · `CMake`
 
 ## Build
 
-Open `spacetime-curvature.sln` in Visual Studio 2022, build and run (x64). Requires GLEW and GLFW. Library paths in the `.vcxproj` point to `C:\IT\glfw-3.4.bin.WIN64` and `C:\IT\glew-2.1.0` — adjust them to your install locations.
+Requires OpenGL, GLEW and GLFW. On Windows the easiest way is [vcpkg](https://vcpkg.io/):
+
+```bash
+vcpkg install glew glfw3
+```
+
+Then configure and build:
+
+```bash
+cmake -B build -S . -DCMAKE_TOOLCHAIN_FILE=<path-to-vcpkg>/scripts/buildsystems/vcpkg.cmake
+cmake --build build --config Release
+```
+
+On Linux / macOS install GLEW and GLFW via your package manager (`apt install libglew-dev libglfw3-dev`, `brew install glew glfw`) and run the same `cmake` commands without the toolchain file.
+
+The executable lands in `build/` (or `build/Release` on multi-config generators).
