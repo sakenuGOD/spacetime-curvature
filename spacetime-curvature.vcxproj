@@ -22,7 +22,7 @@
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
     <ProjectGuid>{089f3506-097d-4d29-9601-6d5ee958de92}</ProjectGuid>
-    <RootNamespace>asdzxcvasdfasdfasdf</RootNamespace>
+    <RootNamespace>spacetimecurvature</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />

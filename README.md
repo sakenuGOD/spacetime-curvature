@@ -2,25 +2,29 @@
 
 Interactive 3D visualization of how massive objects bend spacetime.
 
-A planet sits on a deformable grid (representing spacetime fabric) and warps it with its mass. A satellite orbits along the curved surface — the heavier the planet, the deeper the curvature and the tighter the orbit.
+A planet sits on a deformable grid (representing the spacetime fabric) and warps it with its mass. A satellite orbits along the curved surface — the heavier the planet, the deeper the curvature.
+
+![preview](preview.jpg)
 
 ## Controls
 
-- **Mouse wheel** — change planet mass (grid deformation depth)
+- **`=` / `+`** — increase planet mass
+- **`-`** — decrease planet mass
 - **Hold Shift** — faster mass change
+- **Esc** — quit
 
 ## How it works
 
-- 200x200 deformable grid rendered in real-time
-- Grid vertices displaced based on distance from the massive object (inverse-square falloff)
-- Satellite follows the curved surface at a fixed orbital radius
+- 200×200 deformable grid rendered in real-time
+- Grid vertices displaced by distance from the massive object (inverse-square-style falloff, clamped)
+- Satellite follows a fixed orbital radius at the sphere's settled height
 - Background star field for depth
-- Built with raw OpenGL — no engine, no physics library
+- Raw OpenGL — no engine, no physics library
 
 ## Stack
 
-`C++` `OpenGL` `GLEW` `GLFW`
+`C++` · `OpenGL` · `GLEW` · `GLFW`
 
 ## Build
 
-Open `.sln` in Visual Studio, build and run. Requires GLEW and GLFW libraries.
+Open `spacetime-curvature.sln` in Visual Studio 2022, build and run (x64). Requires GLEW and GLFW. Library paths in the `.vcxproj` point to `C:\IT\glfw-3.4.bin.WIN64` and `C:\IT\glew-2.1.0` — adjust them to your install locations.
